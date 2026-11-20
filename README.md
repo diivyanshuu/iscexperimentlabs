@@ -1,6 +1,6 @@
 # ISC Labs
 
-**Free, open-source 3D virtual labs for Class 12 Physics and Chemistry practicals (ISC and CBSE, India).**
+**Free, open-source 3D virtual labs for Class 12 Physics and Chemistry practicals (ISC , India).**
 
 Many students prepare for practical exams without ever handling the apparatus: their school has no proper lab, too little equipment, or too many students per bench. ISC Labs lets them do the experiment on screen. Set up the apparatus, change the values, take readings, make mistakes, and repeat it until the procedure makes sense. It runs in a browser, including on a phone, and is free.
 
