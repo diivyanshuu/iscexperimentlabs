@@ -1955,7 +1955,7 @@
       <div class="formula-card" style="border-color: rgba(56, 189, 248, 0.4); margin-bottom: 10px;">
         <div class="formula-title">OBJECT (Experiment 1):</div>
         <div style="font-size: 11.5px; color: var(--text-primary); line-height: 1.45;">
-          <strong>C-10</strong>: 1.85 g of KMnO₄ per litre. <strong>C-11</strong>: 22 g of hydrated ammonium iron(II) sulphate, (NH₄)₂SO₄·FeSO₄·<em>x</em>H₂O, per litre. Find the molarities, the molecular mass and <strong style="color:var(--accent-emerald);">x</strong>.
+          <strong>C-10</strong>: 1.60 g of KMnO₄ per litre. <strong>C-11</strong>: 22 g of hydrated ammonium iron(II) sulphate, (NH₄)₂SO₄·FeSO₄·<em>x</em>H₂O, per litre. Find the molarities, the molecular mass and <strong style="color:var(--accent-emerald);">x</strong>.
         </div>
         <div style="font-size: 10.5px; color: var(--text-secondary); margin-top: 5px;">
           <strong>Burette:</strong> 25 mL, least count <strong>0.1 mL</strong> · <strong>Pipette:</strong> <strong>20 mL</strong> · <strong>C-12:</strong> 20 mL dilute H₂SO₄ per titration
@@ -1985,7 +1985,7 @@
 
       <div class="formula-card" style="margin-top: 12px;">
         <div class="formula-title">Equation (n₁ : n₂ = 2 : 10)</div>
-        <div class="formula-math" style="font-size:12px;">2MnO₄⁻ + 10Fe²⁺ + 16H⁺ → 2Mn²⁺ + 10Fe³⁺ + 8H₂O</div>
+        <div class="formula-math" style="font-size:12px;">MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</div>
         <div style="color: var(--text-secondary); font-size: 10.5px; margin-top: 4px; line-height:1.45;">M₁V₁ / M₂V₂ = n₁ / n₂ = 2 / 10. KMnO₄ is its own indicator: the first drop it is not used up turns the flask light pink.</div>
       </div>
     </div>
@@ -2244,16 +2244,16 @@ const AudioSys = {
 
 // =========================================================================
 // 2. CONSTANTS AND STATE (CHEMISTRY EXPERIMENT 1: KMnO4 AGAINST FERROUS AMMONIUM SULPHATE)
-//    Book: ISC Chemistry Lab Manual, Experiment 1. School rule: 20 mL pipette (book example used 25 mL).
+//    Book: ISC Chemistry Lab Manual, Experiment 1. School rule: 25 mL pipette (book example used 25 mL).
 // =========================================================================
 const CU = 0.2;                       // world units per cm (1 world unit = 5 cm). Table top is y = 0.
 const H = cm => cm * CU;              // height above the table (cm) -> world y
-const KMNO4_GPL = 1.85, FAS_GPL = 22;
+const KMNO4_GPL = 1.60, FAS_GPL = 19.3;
 const MW_KMNO4 = 158, MW_ANHYD = 284; // K 39, Mn 55, O 16 | (NH4)2SO4.FeSO4 = 284
 const X_TRUE = 6;                     // the simulator's salt really is the hexahydrate (molar mass 392)
 const M1_TRUE = KMNO4_GPL / MW_KMNO4; // 0.0117089 M
 const M2_TRUE = FAS_GPL / (MW_ANHYD + 18 * X_TRUE); // 0.056122 M
-const PIPETTE_ML = 20;                // capacity of the pipette (school practice)
+const PIPETTE_ML = 25;                // capacity of the pipette (school practice)
 const ACID_ML = 20;                   // C-12, dilute H2SO4
 const DROP_ML = 0.05;                 // one drop from the burette
 const RUN_RATE = 0.45;                // mL per second with the stopcock open
@@ -8257,6 +8257,7 @@ visualTick = function () { _rpVT(); const n = performance.now(); if (n - _rpT > 
 })();
 
 </script>
+
 <script>
 /* Lab loader: starts the lab only when the 3D engine (three.js) is inside this file.
    The SOURCE template has no engine, so instead of a script error it shows a clear message. */
@@ -8274,8 +8275,7 @@ visualTick = function () { _rpVT(); const n = performance.now(); if (n - _rpT > 
     return;
   }
   var s = document.createElement('script');
-  s.text = holder.text;
-  document.body.appendChild(s);
+  s.text = holder.text;ld(s);
 })();
 </script>
 <!-- Back-to-list link (added by the portal; safe to leave out of the lab itself) -->
